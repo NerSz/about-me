@@ -1,14 +1,20 @@
 # Danil Tikhonov-Gartung
 
-**Backend Developer** | Python & Node.js | Based in Saint Petersburg | Remote | Freelance
+# Привет! Я — Данил Тихонов-Гартунг
 
----
+Начинающий разработчик 1С с техническим образованием и практическим опытом в области автоматизации. Активно изучаю 1С:Предприятие 8, развиваюсь в сторону ERP и автоматизации документооборота.
 
-Hi! I'm a backend developer working with Python, Node.js, PostgreSQL, and Docker.  
-I collaborate remotely with clients across Europe and study IT remotely in Kurgan.
+## Навыки:
+- 1С:Предприятие 8 (разработка, конфигурации)
+- 1С v7.7 (опыт внедрения и оптимизации)
+- ERP, техническая автоматизация, производственные расчёты
+- Python, Node.js — на базовом уровне
+- AutoCAD, Компас-3D, Mathcad
 
----
+## Контакты:
+- Email: [denya86@icloud.com](mailto:denya86@icloud.com)
+- Портфолио: [nersz.github.io/about-me](https://nersz.github.io/about-me)
 
-### → Full portfolio, tech stack, and contacts:
+## Цель:
+Найти позицию Junior 1С-разработчика, применяя знания программной инженерии и системного подхода к автоматизации бизнес-процессов.
 
-**[nersz.github.io/about-me](https://nersz.github.io/about-me)**
