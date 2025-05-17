@@ -772,27 +772,63 @@
     color: var(--c-accent);
   }
 </style>
-
-<section>
-  <h2>Контакты с иконками</h2>
-  <div class="contact-icons">
-    <a href="mailto:denya86@icloud.com">
-      <img class="animated-icon" src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="email"> Email
+<!-- Контакты -->
+<section id="contacts" class="section">
+  <h2 class="section-title">Контакты</h2>
+  <div class="social-block">
+    <a href="mailto:denya86@icloud.com" class="social-icon" title="Email">
+      <i class="fas fa-envelope"></i>
     </a>
-    <a href="https://t.me/cruse777">
-      <img class="animated-icon" src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="telegram"> Telegram
+    <a href="https://t.me/cruse777" class="social-icon" title="Telegram" target="_blank">
+      <i class="fab fa-telegram-plane"></i>
     </a>
-    <a href="https://www.instagram.com/danyaaa_7172/">
-      <img class="animated-icon" src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="instagram"> Instagram
+    <a href="https://www.instagram.com/danyaaa_7172" class="social-icon" title="Instagram" target="_blank">
+      <i class="fab fa-instagram"></i>
     </a>
-    <a href="https://x.com/gartung667">
-      <img class="animated-icon" src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="twitter"> Twitter
+    <a href="https://x.com/gartung667" class="social-icon" title="Twitter" target="_blank">
+      <i class="fab fa-x-twitter"></i>
     </a>
-    <a href="https://www.facebook.com/share/16or7i1rgL/">
-      <img class="animated-icon" src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="facebook"> Facebook
+    <a href="https://facebook.com" class="social-icon" title="Facebook" target="_blank">
+      <i class="fab fa-facebook-f"></i>
     </a>
   </div>
 </section>
+
+<style>
+  .section {
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #eee;
+  }
+
+  .social-block {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .social-icon {
+    font-size: 26px;
+    color: #aaa;
+    transition: all 0.3s ease;
+  }
+
+  .social-icon:hover {
+    color: #00ffee;
+    transform: scale(1.15);
+    text-shadow: 0 0 10px #00ffee;
+  }
+</style>
+
+<!-- Font Awesome: вставь эту строку в <head>, если ещё не подключал -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
   .spotlight {
     position: fixed;
