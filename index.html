@@ -6,73 +6,104 @@
   <title>Данил Тихонов-Гартунг | 1С-разработчик</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --accent: #999;
+      --bg-dark: #0b0b0b;
+      --text-main: #e0e0e0;
+      --text-soft: #a0a0a0;
+      --border: #222;
+    }
+
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
     body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
       font-family: 'Inter', sans-serif;
-      background-color: #0a0a0a;
-      color: #e0e0e0;
-      padding: 60px 20px;
       line-height: 1.7;
+      padding: 50px 20px;
     }
+
     .container {
       max-width: 880px;
       margin: auto;
-      background: linear-gradient(145deg, rgba(20,20,20,0.8), rgba(10,10,10,0.9));
-      border: 1px solid #1e1e1e;
+      border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 40px 30px;
+      padding: 40px;
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.02), rgba(255,255,255,0));
       position: relative;
     }
-    h1 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      margin-bottom: 0.3em;
-      position: relative;
-      color: #ffffff;
-    }
-    h1::after {
+
+    .container::before {
       content: 'DG';
       position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 5rem;
-      color: rgba(255, 255, 255, 0.04);
-      font-weight: bold;
+      top: 20px;
+      right: 30px;
+      font-size: 6rem;
+      color: rgba(255, 255, 255, 0.03);
+      font-weight: 800;
       pointer-events: none;
     }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 0.2em;
+      color: #fff;
+    }
+
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       margin-top: 2.5em;
-      margin-bottom: 0.7em;
-      color: #d2d2d2;
-      border-bottom: 1px solid #333;
-      padding-bottom: 6px;
+      margin-bottom: 0.5em;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 5px;
+      color: var(--text-main);
     }
-    p, li {
+
+    p {
+      color: var(--text-soft);
       font-size: 1rem;
-      color: #c0c0c0;
+      margin-bottom: 1em;
     }
+
     ul {
       list-style: none;
       padding-left: 0;
     }
-    ul li::before {
-      content: '•';
-      color: #777;
-      margin-right: 8px;
+
+    li {
+      margin: 12px 0;
+      display: flex;
+      align-items: center;
     }
-    a {
-      color: #aab4ff;
+
+    li img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      filter: grayscale(100%) brightness(150%);
+      transition: filter 0.3s ease;
+    }
+
+    li a {
+      color: var(--accent);
       text-decoration: none;
+      transition: all 0.3s ease;
     }
-    a:hover {
-      text-decoration: underline;
+
+    li:hover img {
+      filter: none;
     }
-    .section {
-      margin-bottom: 30px;
+
+    li:hover a {
+      color: #fff;
     }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
@@ -83,27 +114,36 @@
 <body>
   <div class="container">
     <h1>Данил Тихонов-Гартунг</h1>
-    <p>1С-разработчик · Автоматизация · ERP</p>
+    <p>1С-разработчик · Автоматизация · ERP · Инженерный подход</p>
 
-    <div class="section">
-      <h2>О себе</h2>
-      <p>
-        Разработчик 1С с техническим образованием и опытом в промышленной автоматизации.
-        Работаю с 1С:Предприятие, участвую в оптимизации процессов, внедрении учётных решений и цифровизации.
-        Умею системно подходить к задачам, адаптировать техдокументацию в реальное решение.
-      </p>
-    </div>
+    <h2>О себе</h2>
+    <p>
+      Разработчик 1С с техническим образованием и практикой в сфере автоматизации. Участвую в оптимизации бизнес-процессов, внедряю учётные решения и перевожу технические задачи в понятные и эффективные инструменты на платформе 1С.
+    </p>
 
-    <div class="section">
-      <h2>Контакты</h2>
-      <ul>
-        <li>Email: <a href="mailto:denya86@icloud.com">denya86@icloud.com</a></li>
-        <li>Telegram: <a href="https://t.me/cruse777" target="_blank">t.me/cruse777</a></li>
-        <li>Instagram: <a href="https://www.instagram.com/danyaaa_7172/profilecard/?igsh=am94OWp1djdjMXh1" target="_blank">@danyaaa_7172</a></li>
-        <li>Twitter: <a href="https://x.com/gartung667?s=21" target="_blank">@gartung667</a></li>
-        <li>Facebook: <a href="https://www.facebook.com/share/16or7i1rgL/?mibextid=wwXIfr" target="_blank">facebook.com</a></li>
-      </ul>
-    </div>
+    <h2>Контакты</h2>
+    <ul>
+      <li>
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram-app.png" alt="telegram">
+        <a href="https://t.me/cruse777" target="_blank">t.me/cruse777</a>
+      </li>
+      <li>
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="instagram">
+        <a href="https://www.instagram.com/danyaaa_7172/profilecard/?igsh=am94OWp1djdjMXh1" target="_blank">@danyaaa_7172</a>
+      </li>
+      <li>
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/twitter.png" alt="twitter">
+        <a href="https://x.com/gartung667?s=21" target="_blank">@gartung667</a>
+      </li>
+      <li>
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="facebook">
+        <a href="https://www.facebook.com/share/16or7i1rgL/?mibextid=wwXIfr" target="_blank">facebook.com</a>
+      </li>
+      <li>
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/new-post.png" alt="email">
+        <a href="mailto:denya86@icloud.com">denya86@icloud.com</a>
+      </li>
+    </ul>
   </div>
 </body>
 </html>
