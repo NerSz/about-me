@@ -11,59 +11,72 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      background: url('https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-      background-size: cover;
-      color: #f1f1f1;
-      padding: 40px 20px;
-      backdrop-filter: blur(12px);
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      padding: 60px 20px;
+      line-height: 1.7;
     }
     .container {
-      background-color: rgba(15, 15, 15, 0.85);
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 860px;
+      max-width: 880px;
       margin: auto;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      background: linear-gradient(145deg, rgba(20,20,20,0.8), rgba(10,10,10,0.9));
+      border: 1px solid #1e1e1e;
+      border-radius: 14px;
+      padding: 40px 30px;
+      position: relative;
     }
     h1 {
-      font-size: 2.6rem;
+      font-size: 2.8rem;
       font-weight: 800;
       margin-bottom: 0.3em;
       position: relative;
+      color: #ffffff;
     }
     h1::after {
       content: 'DG';
       position: absolute;
-      right: 0;
       top: 10px;
+      right: 20px;
       font-size: 5rem;
-      color: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.04);
+      font-weight: bold;
       pointer-events: none;
     }
     h2 {
       font-size: 1.4rem;
-      margin-top: 2em;
-      margin-bottom: 0.5em;
-      color: #e0e0e0;
-      border-bottom: 1px solid #444;
-      padding-bottom: 4px;
+      margin-top: 2.5em;
+      margin-bottom: 0.7em;
+      color: #d2d2d2;
+      border-bottom: 1px solid #333;
+      padding-bottom: 6px;
     }
     p, li {
       font-size: 1rem;
-      line-height: 1.6;
-      color: #d0d0d0;
+      color: #c0c0c0;
     }
-    ul { list-style-type: disc; padding-left: 1.5em; }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li::before {
+      content: '•';
+      color: #777;
+      margin-right: 8px;
+    }
     a {
-      color: #aaaaff;
+      color: #aab4ff;
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
-    .contact-icons li {
-      list-style-type: none;
-      margin-bottom: 8px;
+    .section {
+      margin-bottom: 30px;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -72,21 +85,25 @@
     <h1>Данил Тихонов-Гартунг</h1>
     <p>1С-разработчик · Автоматизация · ERP</p>
 
-    <h2>О себе</h2>
-    <p>
-      Разработчик 1С с техническим образованием и опытом в промышленной автоматизации.
-      Работаю с 1С:Предприятие, участвую в оптимизации процессов, внедрении учётных решений и цифровизации.
-      Умею системно подходить к задачам, адаптировать техдокументацию в реальное решение.
-    </p>
+    <div class="section">
+      <h2>О себе</h2>
+      <p>
+        Разработчик 1С с техническим образованием и опытом в промышленной автоматизации.
+        Работаю с 1С:Предприятие, участвую в оптимизации процессов, внедрении учётных решений и цифровизации.
+        Умею системно подходить к задачам, адаптировать техдокументацию в реальное решение.
+      </p>
+    </div>
 
-    <h2>Контакты</h2>
-    <ul class="contact-icons">
-      <li>Email: <a href="mailto:denya86@icloud.com">denya86@icloud.com</a></li>
-      <li>Telegram: <a href="https://t.me/cruse777" target="_blank">t.me/cruse777</a></li>
-      <li>Instagram: <a href="https://www.instagram.com/danyaaa_7172/profilecard/?igsh=am94OWp1djdjMXh1" target="_blank">@danyaaa_7172</a></li>
-      <li>Twitter: <a href="https://x.com/gartung667?s=21" target="_blank">@gartung667</a></li>
-      <li>Facebook: <a href="https://www.facebook.com/share/16or7i1rgL/?mibextid=wwXIfr" target="_blank">facebook.com</a></li>
-    </ul>
+    <div class="section">
+      <h2>Контакты</h2>
+      <ul>
+        <li>Email: <a href="mailto:denya86@icloud.com">denya86@icloud.com</a></li>
+        <li>Telegram: <a href="https://t.me/cruse777" target="_blank">t.me/cruse777</a></li>
+        <li>Instagram: <a href="https://www.instagram.com/danyaaa_7172/profilecard/?igsh=am94OWp1djdjMXh1" target="_blank">@danyaaa_7172</a></li>
+        <li>Twitter: <a href="https://x.com/gartung667?s=21" target="_blank">@gartung667</a></li>
+        <li>Facebook: <a href="https://www.facebook.com/share/16or7i1rgL/?mibextid=wwXIfr" target="_blank">facebook.com</a></li>
+      </ul>
+    </div>
   </div>
 </body>
 </html>
