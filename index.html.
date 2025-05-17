@@ -89,7 +89,7 @@
 </head>
 <body>
   <header>
-    <img src="your-photo.jpg" alt="Моё фото" class="photo" />
+    <img src="IMG_0355.webp" alt="Моё фото" class="photo" />
     <img src="1c-logo.webp" alt="Логотип 1С" class="logo" />
   </header>
 
