@@ -636,3 +636,120 @@
 
   animateAura();
 </script>
+<!-- АНИМАЦИЯ ПОЯВЛЕНИЯ СЕКЦИЙ -->
+<style>
+  section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: opacity, transform;
+  }
+
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const revealSections = () => {
+    const sections = document.querySelectorAll("section");
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      const triggerPoint = window.innerHeight * 0.9;
+      if (rect.top <= triggerPoint) {
+        section.classList.add("visible");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", revealSections);
+  window.addEventListener("load", revealSections);
+</script>
+<!-- LIVE UI STATUS (в правом нижнем углу) -->
+<div class="live-status" id="liveStatus">Interface: <span>ACTIVE</span></div>
+
+<style>
+  .live-status {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    font-size: 0.8rem;
+    font-family: 'Courier New', monospace;
+    color: #aaa;
+    background: rgba(255,255,255,0.02);
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 0 8px rgba(0,255,195,0.06);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+  }
+
+  .live-status span {
+    color: #00ffc3;
+    animation: pulseStatus 2s infinite ease-in-out;
+  }
+
+  .live-status:hover span {
+    color: #ffffff;
+    text-shadow: 0 0 6px rgba(0,255,195,0.4);
+  }
+
+  @keyframes pulseStatus {
+    0%, 100% {
+      opacity: 0.85;
+      text-shadow: 0 0 4px rgba(0,255,195,0.3);
+    }
+    50% {
+      opacity: 1;
+      text-shadow: 0 0 10px rgba(0,255,195,0.6);
+    }
+  }
+</style>
+<!-- ЯЗЫКОВОЙ ПЕРЕКЛЮЧАТЕЛЬ -->
+<div class="lang-switch" id="langSwitch">
+  <span class="active-lang">RU</span> | <span class="inactive-lang">EN</span>
+</div>
+
+<style>
+  .lang-switch {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #aaa;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 0 8px rgba(0,255,195,0.05);
+  }
+
+  .lang-switch:hover {
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 0 12px rgba(0,255,195,0.08);
+  }
+
+  .active-lang {
+    color: var(--accent);
+    font-weight: bold;
+    text-shadow: 0 0 6px rgba(0,255,195,0.4);
+  }
+
+  .inactive-lang {
+    color: #666;
+    transition: color 0.2s ease;
+  }
+
+  .lang-switch:hover .inactive-lang {
+    color: #999;
+  }
+</style>
