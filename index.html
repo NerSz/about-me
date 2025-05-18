@@ -286,3 +286,192 @@
       }
     }
   </style>
+<!-- СЕКЦИЯ: ОБРАЗОВАНИЕ -->
+<section id="education" class="section-education">
+  <div class="edu-card">
+    <h2>Образование</h2>
+    <p class="edu-place">Курганский государственный университет</p>
+    <p class="edu-spec">Программная инженерия (в процессе обучения)</p>
+    <p class="edu-desc">
+      Алгоритмы, инженерные методики, архитектура ПО. Изучаю принципы системного проектирования, оптимизации и цифровой автоматизации. База: 1С, SQL, математические модели.
+    </p>
+  </div>
+</section>
+
+<style>
+  .section-education {
+    margin-top: 80px;
+  }
+
+  .edu-card {
+    background: var(--card-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 18px;
+    padding: 40px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 0 40px rgba(0,255,195,0.03);
+  }
+
+  .edu-card h2 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+
+  .edu-place {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #ccc;
+    margin-bottom: 6px;
+  }
+
+  .edu-spec {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 20px;
+  }
+
+  .edu-desc {
+    font-size: 0.95rem;
+    color: #cfcfcf;
+    line-height: 1.6;
+  }
+</style>
+<!-- СЕКЦИЯ: ПРОЕКТЫ -->
+<section id="projects" class="section-projects">
+  <div class="projects-card">
+    <h2>Проекты</h2>
+    <div class="projects-grid">
+
+      <div class="project-block">
+        <h3>1С: Автоматизация расчёта норм</h3>
+        <p>Обработка на базе 1С 8.3 для упрощения расчётов времени, материалов и ресурсов. Внедрена в производственный цикл.</p>
+      </div>
+
+      <div class="project-block">
+        <h3>Сайт-портфолио NerSz</h3>
+        <p>Модульная HTML/CSS-структура. Интерактивный UI с неоновыми элементами. Отражение инженерного подхода и кода.</p>
+      </div>
+
+      <div class="project-block">
+        <h3>Документооборот 1С</h3>
+        <p>Согласование заявок и маршрутизация внутренних процессов через систему документооборота, кастомизированная под отдел.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects-card {
+    background: var(--card-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 18px;
+    padding: 40px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 60px rgba(0,255,195,0.03);
+  }
+
+  .projects-card h2 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 28px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .project-block {
+    background: rgba(255,255,255,0.015);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 14px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+  }
+
+  .project-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 12px rgba(0,255,195,0.07);
+  }
+
+  .project-block h3 {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .project-block p {
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+<!-- СЕКЦИЯ: КОНТАКТЫ -->
+<section id="contacts" class="section-contacts">
+  <div class="contacts-card">
+    <h2>Контакты</h2>
+    <p class="contact-sub">Открыт к сотрудничеству, проектам и интересным задачам</p>
+    
+    <div class="social-icons">
+      <a href="mailto:denya86@icloud.com" title="Email" target="_blank"><i class="fas fa-envelope"></i></a>
+      <a href="https://t.me/cruse777" title="Telegram" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://www.instagram.com/danyaaa_7172" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/gartung667" title="Twitter/X" target="_blank"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://facebook.com" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contacts-card {
+    background: var(--card-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 18px;
+    padding: 40px;
+    backdrop-filter: blur(12px);
+    text-align: center;
+    box-shadow: 0 0 60px rgba(0,255,195,0.02);
+  }
+
+  .contacts-card h2 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+
+  .contact-sub {
+    font-size: 0.95rem;
+    color: #aaa;
+    margin-bottom: 24px;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .social-icons a {
+    font-size: 28px;
+    color: #aaa;
+    transition: all 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: var(--accent);
+    transform: scale(1.2);
+    text-shadow: 0 0 12px rgba(0,255,195,0.3);
+  }
+</style>
