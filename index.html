@@ -3,13 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Данил Тихонов-Гартунг | 1С-разработчик</title>
+  <title>NER.SZ // Interface v2.0</title>
+
+  <!-- Шрифты и иконки -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    :root {
+      --c-bg: #0a0a0a;
+      --c-text: #d2d2d2;
+      --c-accent: #00ffc3;
+      --c-glow: rgba(0,255,195,0.25);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -18,148 +27,400 @@
 
     html, body {
       font-family: 'Inter', sans-serif;
-      background-color: #0d0d0d;
-      color: #f0f0f0;
+      background: var(--c-bg);
+      color: var(--c-text);
+      overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
     body {
-      padding: 40px 20px;
+      padding: 60px 20px;
       max-width: 980px;
       margin: auto;
+      position: relative;
     }
 
-    h1 {
-      font-size: 2.8rem;
+    /* Градиентное имя */
+    h1.hero-name {
+      font-size: 3rem;
       font-weight: 900;
-      background: linear-gradient(to right, #999, #eee);
+      background: linear-gradient(135deg, #777, #eee, #00ffc3);
+      background-clip: text;
       -webkit-background-clip: text;
+      color: transparent;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 0.5em;
+      letter-spacing: 2px;
+      margin-bottom: 0.3em;
+      position: relative;
     }
 
-    h2 {
-      font-size: 1.6rem;
-      margin: 2em 0 0.5em;
-      color: #00ffc3;
-      border-bottom: 1px solid #333;
-      padding-bottom: 0.3em;
+    h1.hero-name::after {
+      content: "resume.system";
+      display: block;
+      font-size: 0.9rem;
+      color: #444;
+      letter-spacing: 4px;
+      margin-top: 6px;
     }
 
-    p, li {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #d0d0d0;
+    /* Тонкая световая аура */
+    .name-glow {
+      position: absolute;
+      top: -30px;
+      left: 0;
+      width: 100%;
+      height: 180px;
+      background: radial-gradient(circle at center, rgba(0,255,195,0.06), transparent 80%);
+      z-index: -1;
+      filter: blur(16px);
     }
 
-    ul {
-      padding-left: 1.5em;
-      margin-top: 0.5em;
-    }
-
-    a {
-      color: #00ffc3;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    a:hover {
-      color: #ffffff;
-    }
-
-    .section {
-      margin-bottom: 60px;
-    }
-
-    .contacts-icons {
-      display: flex;
-      justify-content: flex-start;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 15px;
-    }
-
-    .contacts-icons a {
-      font-size: 1.8rem;
-      color: #ccc;
-      transition: 0.3s ease;
-    }
-
-    .contacts-icons a:hover {
-      color: #00ffc3;
-      transform: scale(1.1);
-    }
-
-    .section-title {
-      font-size: 1.4rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 0.5em;
-      color: #999;
+    .glass-init {
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 20px;
+      padding: 40px 50px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 0 40px rgba(0,255,195,0.02);
     }
   </style>
 </head>
+
 <body>
-    <header class="section">
-    <h1>Данил Тихонов-Гартунг</h1>
-    <p>1С-разработчик · Автоматизация · ERP · Инженерный подход</p>
-  </header>
-
-  <section id="about" class="section">
-    <h2>О себе</h2>
-    <p>
-      Разработчик 1С с техническим образованием и опытом в промышленной автоматизации.
-      Работаю с 1С:Предприятие 8, участвую в оптимизации процессов, внедрении учётных решений и цифровизации.
-      Умею системно подходить к задачам, адаптировать техдокументацию в решения и автоматизировать реальные процессы.
+  <div class="glass-init">
+    <h1 class="hero-name">Данил Тихонов-Гартунг</h1>
+    <div class="name-glow"></div>
+    <p style="color:#aaa;font-size:1.1rem;letter-spacing:0.4px;margin-top:10px;">
+      1С • Системный взгляд • Производственные технологии • Digital Core
     </p>
-  </section>
-
-  <section id="skills" class="section">
-    <h2>Навыки</h2>
-    <ul>
-      <li>1С:Предприятие 8 — конфигурирование, отчёты, обработки, СКД, запросы</li>
-      <li>1С v7.7 — внедрение, настройка производственных формул</li>
-      <li>ERP-системы — расчёты, управление производством</li>
-      <li>AutoCAD, Компас-3D, Mathcad — проектирование и инженерные задачи</li>
-      <li>Python, Node.js — скрипты и автоматизация</li>
-      <li>SQL — основы БД, структура данных</li>
-    </ul>
-  </section>
-
-  <section id="projects" class="section">
-    <h2>Проекты</h2>
-    <ul>
-      <li><strong>1С: Автоматизация расчёта норм</strong> — Обработка на базе 1С 8.3 для расчёта норм времени и материалов</li>
-      <li><strong>Портфолио-сайт</strong> — Адаптивный сайт на GitHub Pages с HTML, CSS и анимацией</li>
-    </ul>
-  </section>
-
-  <section id="contacts" class="section">
-    <h2>Контакты</h2>
-    <p>Email: <a href="mailto:denya86@icloud.com">denya86@icloud.com</a></p>
-    <div class="contacts-icons">
-      <a href="https://t.me/cruse777" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
-      <a href="https://www.instagram.com/danyaaa_7172" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://x.com/gartung667" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+  </div>
+    <section id="about" class="section-about">
+    <div class="about-glass">
+      <h2>О себе</h2>
+      <p>
+        Технический ум. Системное мышление. Инженерная подача.
+        <br><br>
+        Я — Данил Тихонов-Гартунг. Разработчик 1С с бэкграундом в автоматизации, технологических расчётах и проектировании. Я соединяю данные, процессы и интерфейсы в единые рабочие структуры, где всё подчинено логике, удобству и результату.
+        <br><br>
+        Вижу код не как синтаксис, а как инфраструктуру — архитектуру цифровой среды, в которой работают люди и бизнес. Умею внедрять решения, настраивать логику учёта, а главное — мыслить системно.
+      </p>
     </div>
   </section>
-    <footer class="section">
-    <p style="font-size: 0.9rem; color: #777; text-align: center; margin-top: 60px;">
-      © 2027 Данил Тихонов-Гартунг — построено с вниманием к деталям и автоматизацией.
-    </p>
-  </footer>
 
-  <!-- Скрытый системный ID -->
-  <div style="position: fixed; bottom: 4px; right: 8px; font-size: 0.65rem; color: #222; opacity: 0.2;">
-    NerSz.Infinity.Interface
+  <style>
+    .section-about {
+      margin-top: 80px;
+    }
+
+    .about-glass {
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 16px;
+      padding: 40px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 0 50px rgba(0,255,195,0.03);
+      position: relative;
+    }
+
+    .about-glass h2 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: #00ffc3;
+      letter-spacing: 1px;
+    }
+
+    .about-glass p {
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.7;
+      letter-spacing: 0.3px;
+    }
+  </style>
+  <section id="experience" class="section-experience">
+  <div class="resume-cards">
+
+    <div class="card-glass">
+      <h3>Опыт работы</h3>
+      <ul>
+        <li>
+          <strong>КЗДМ — Инженер-технолог</strong><br>
+          Январь 2024 — н.в.<br>
+          Работа с 1С v7.7: формулы, справочники, документы.<br>
+          Оптимизация процессов и производственные расчёты.
+        </li>
+        <li style="margin-top: 20px;">
+          <strong>КЗЭМИ — Наладчик КИПиА</strong><br>
+          Февраль 2023 — Январь 2024<br>
+          Автоматизация, чертежи AutoCAD, настройка АСУ и ПЛК.
+        </li>
+      </ul>
+    </div>
+
+    <div class="card-glass">
+      <h3>Образование</h3>
+      <p>
+        <strong>Курганский государственный университет</strong><br>
+        Программная инженерия (н.в.)<br>
+        База: алгоритмы, проектирование, инженерное ПО, 1С
+      </p>
+    </div>
+
   </div>
+</section>
 
-</body>
-</html>
-<!-- Scroll progress bar -->
 <style>
-  .scroll-progress {
+  .resume-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 60px;
+  }
+
+  .card-glass {
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 16px;
+    padding: 30px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 0 30px rgba(0,255,195,0.02);
+  }
+
+  .card-glass h3 {
+    color: #00ffc3;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+  }
+
+  .card-glass ul {
+    padding-left: 18px;
+    list-style: disc;
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .card-glass p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  @media(max-width: 768px) {
+    .resume-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+<section id="skills" class="section-skills">
+  <h2>Навыки</h2>
+  <div class="skills-grid">
+    <span class="skill-tag">1С:Предприятие 8</span>
+    <span class="skill-tag">1С v7.7</span>
+    <span class="skill-tag">ERP-системы</span>
+    <span class="skill-tag">SQL (базы данных)</span>
+    <span class="skill-tag">AutoCAD</span>
+    <span class="skill-tag">Компас-3D</span>
+    <span class="skill-tag">PTC Mathcad</span>
+    <span class="skill-tag">Node.js</span>
+    <span class="skill-tag">Python (скрипты)</span>
+    <span class="skill-tag">Документооборот</span>
+    <span class="skill-tag">Проектирование</span>
+    <span class="skill-tag">ООП + логика</span>
+  </div>
+</section>
+
+<style>
+  .section-skills {
+    margin-top: 80px;
+  }
+
+  .section-skills h2 {
+    color: #00ffc3;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .skill-tag {
+    padding: 10px 16px;
+    background: rgba(0, 255, 195, 0.07);
+    border: 1px solid rgba(0, 255, 195, 0.15);
+    border-radius: 8px;
+    color: #cfcfcf;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+  }
+
+  .skill-tag:hover {
+    background: rgba(0, 255, 195, 0.2);
+    color: #00ffc3;
+    box-shadow: 0 0 8px rgba(0, 255, 195, 0.2);
+  }
+</style>
+<section id="projects" class="section-projects">
+  <h2>Проекты</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <h3>1С: Автоматизация расчёта норм</h3>
+      <p>
+        Встроенная обработка для 1С 8.3, реализующая расчёт норм времени, материалов и трудозатрат на основе формул.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>Сайт-портфолио NerSz</h3>
+      <p>
+        Полностью кастомный HTML/CSS-интерфейс. Визуальная оболочка, отражающая структуру мышления и цифровой стиль.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>Документооборот 1С</h3>
+      <p>
+        Участие во внедрении системы согласования заявок и внутренней документации в крупном производственном отделе.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .section-projects {
+    margin-top: 80px;
+  }
+
+  .section-projects h2 {
+    color: #00ffc3;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .project-card {
+    background: rgba(255,255,255,0.015);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 14px;
+    padding: 24px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(0,255,195,0.04);
+  }
+
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(0,255,195,0.08);
+  }
+
+  .project-card h3 {
+    font-size: 1.1rem;
+    color: #00ffc3;
+    margin-bottom: 10px;
+  }
+
+  .project-card p {
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.5;
+  }
+
+  @media(max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+<section id="contacts" class="section-contacts">
+  <h2>Контакты</h2>
+  <div class="contact-icons">
+    <a href="mailto:denya86@icloud.com" title="Email"><i class="fas fa-envelope"></i></a>
+    <a href="https://t.me/cruse777" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+    <a href="https://www.instagram.com/danyaaa_7172" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://x.com/gartung667" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+  </div>
+</section>
+
+<style>
+  .section-contacts {
+    margin-top: 80px;
+    text-align: center;
+  }
+
+  .section-contacts h2 {
+    color: #00ffc3;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 10px 0;
+  }
+
+  .contact-icons a {
+    font-size: 28px;
+    color: #999;
+    transition: 0.3s ease;
+  }
+
+  .contact-icons a:hover {
+    color: #00ffc3;
+    transform: scale(1.2);
+    text-shadow: 0 0 12px rgba(0,255,195,0.4);
+  }
+</style>
+<footer class="footer-core">
+  <div class="footer-wrap">
+    <p class="footer-main">Данил Тихонов-Гартунг — Digital Engineering & Interface Architect</p>
+    <p class="footer-core-line">NerSz Engine • Infinity Resume v2.0</p>
+  </div>
+</footer>
+
+<style>
+  .footer-core {
+    margin-top: 100px;
+    padding: 40px 0 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.01);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 -20px 60px rgba(0,255,195,0.02);
+  }
+
+  .footer-main {
+    color: #888;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-core-line {
+    color: #444;
+    font-size: 0.72rem;
+    opacity: 0.4;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+  }
+</style>
+<!-- Scroll Progress Indicator -->
+<div id="scroll-progress-bar"></div>
+
+<style>
+  #scroll-progress-bar {
     position: fixed;
     top: 0;
     left: 0;
@@ -168,109 +429,71 @@
     width: 0%;
     z-index: 9999;
     transition: width 0.2s ease-out;
+    box-shadow: 0 0 8px rgba(0, 255, 195, 0.25);
   }
 </style>
-<div class="scroll-progress" id="scrollProgress"></div>
 
-<!-- Cursor aura effect -->
-<style>
-  .cursor-aura {
-    width: 40px;
-    height: 40px;
-    position: fixed;
-    pointer-events: none;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(0,255,195,0.08), transparent 70%);
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-  }
-</style>
+<script>
+  // Scroll progress logic
+  window.addEventListener("scroll", () => {
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.scrollY / docHeight) * 100;
+    document.getElementById("scroll-progress-bar").style.width = scrolled + "%";
+  });
+</script>
+<!-- Cursor Aura -->
 <div class="cursor-aura" id="cursorAura"></div>
 
-<!-- Animate section fade-in -->
+<style>
+  .cursor-aura {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(0,255,195,0.08), transparent 60%);
+    z-index: 9999;
+    mix-blend-mode: lighten;
+    filter: blur(4px);
+    transition: transform 0.15s ease-out;
+    transform: translate(-50%, -50%);
+  }
+</style>
+
+<script>
+  const aura = document.getElementById('cursorAura');
+  document.addEventListener('mousemove', (e) => {
+    aura.style.left = `${e.clientX}px`;
+    aura.style.top = `${e.clientY}px`;
+  });
+</script>
 <style>
   section {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 1s ease;
+    transition: opacity 0.8s ease, transform 0.8s ease;
   }
+
   section.visible {
     opacity: 1;
     transform: translateY(0);
   }
 </style>
+
 <script>
-  // Курсор-аура
-  const aura = document.getElementById('cursorAura');
-  document.addEventListener('mousemove', e => {
-    aura.style.left = `${e.clientX}px`;
-    aura.style.top = `${e.clientY}px`;
-  });
-
-  // Scroll progress bar
-  window.addEventListener('scroll', () => {
-    const scroll = document.documentElement.scrollTop || document.body.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (scroll / height) * 100;
-    document.getElementById('scrollProgress').style.width = scrolled + '%';
-  });
-
-  // Появление секций при прокрутке
   const sections = document.querySelectorAll('section');
 
-  const reveal = () => {
-    sections.forEach(sec => {
-      const rect = sec.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 80) {
-        sec.classList.add('visible');
+  const revealOnScroll = () => {
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        section.classList.add('visible');
       }
     });
   };
 
-  window.addEventListener('scroll', reveal);
-  window.addEventListener('load', reveal);
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
 </script>
-<!-- Низкий бейдж состояния интерфейса -->
-<style>
-  .floating-status {
-    position: fixed;
-    left: 16px;
-    bottom: 16px;
-    font-size: 0.75rem;
-    color: #888;
-    background: rgba(0,255,195,0.05);
-    border: 1px solid rgba(0,255,195,0.15);
-    border-radius: 8px;
-    padding: 6px 12px;
-    backdrop-filter: blur(4px);
-    z-index: 1000;
-    font-family: 'Courier New', monospace;
-  }
-</style>
-
-<div class="floating-status">
-  NerSz Interface v1.0.0
-</div>
-
-<!-- Плавное мерцание точек -->
-<style>
-  .dot-fade-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 0;
-    background-image: radial-gradient(circle, rgba(255,255,255,0.02) 1px, transparent 1px);
-    background-size: 40px 40px;
-    animation: pulseDots 10s infinite alternate;
-  }
-
-  @keyframes pulseDots {
-    0%   { opacity: 0.02; }
-    100% { opacity: 0.06; }
-  }
-</style>
-
-<div class="dot-fade-bg"></div>
