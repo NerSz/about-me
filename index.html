@@ -860,3 +860,40 @@
     }
   }
 </style>
+<!-- ЧАСТЬ 17 / 100 — Светящийся заголовок секции -->
+<h2 class="glow-section-title">Обо мне</h2>
+
+<style>
+  .glow-section-title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #ccc;
+    letter-spacing: 1px;
+    position: relative;
+    margin-bottom: 24px;
+    z-index: 2;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .glow-section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 42px;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(0,255,195,0.5), transparent);
+    box-shadow: 0 0 6px rgba(0,255,195,0.3);
+    border-radius: 2px;
+  }
+
+  @media (max-width: 600px) {
+    .glow-section-title {
+      font-size: 1.4rem;
+    }
+    .glow-section-title::after {
+      width: 32px;
+    }
+  }
+</style>
