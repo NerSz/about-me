@@ -175,7 +175,40 @@
       </div>
     </div>
   </section>
+.glow-section-title {
+  font-size: 1.6rem;
+  color: #e4e4e4;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 24px;
+  transition: all 0.3s ease-in-out;
+}
 
+.glow-section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 40%;
+  height: 2px;
+  background: linear-gradient(to right, #00ffc3, transparent);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0,255,195,0.4);
+  animation: glowline 3s infinite alternate;
+}
+
+@keyframes glowline {
+  0% {
+    width: 30%;
+    opacity: 0.5;
+  }
+  100% {
+    width: 60%;
+    opacity: 1;
+  }
+}
   <style>
     .skills-card {
       background: var(--card-glass);
