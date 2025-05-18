@@ -721,3 +721,47 @@
     }
   }
 </style>
+<!-- ЧАСТЬ 14.1 / 100 — Mini Language Toggle -->
+<div class="lang-toggle" onclick="toggleLang()" title="Switch Language">
+  <span id="langLabel">RU</span>
+</div>
+
+<style>
+  .lang-toggle {
+    position: fixed;
+    top: 22px;
+    right: 22px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: #aaa;
+    cursor: pointer;
+    z-index: 999;
+    backdrop-filter: blur(6px);
+    transition: 0.3s ease;
+    box-shadow: 0 0 8px rgba(0,255,195,0.04);
+  }
+
+  .lang-toggle:hover {
+    background: rgba(255,255,255,0.04);
+    box-shadow: 0 0 10px rgba(0,255,195,0.08);
+    color: #00ffc3;
+  }
+</style>
+
+<script>
+  let currentLang = 'RU';
+
+  function toggleLang() {
+    currentLang = currentLang === 'RU' ? 'EN' : 'RU';
+    document.getElementById('langLabel').textContent = currentLang;
+    // Здесь ты можешь вставить реальную логику смены языка
+  }
+</script>
