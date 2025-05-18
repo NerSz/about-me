@@ -573,3 +573,66 @@
 
   animateAura();
 </script>
+<!-- НЕОНОВАЯ АУРА + ТОЧКА-КУРСОР -->
+<div class="cursor-aura" id="cursorAura"></div>
+<div class="custom-cursor" id="customCursor"></div>
+
+<style>
+  body {
+    cursor: none;
+  }
+
+  .cursor-aura {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(0,255,195,0.08), transparent 60%);
+    z-index: 9998;
+    mix-blend-mode: lighten;
+    filter: blur(4px);
+    will-change: transform;
+    transform: translate(-50%, -50%);
+  }
+
+  .custom-cursor {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #00ffc3;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+  }
+</style>
+
+<script>
+  const aura = document.getElementById('cursorAura');
+  const dot = document.getElementById('customCursor');
+
+  let mouseX = 0, mouseY = 0;
+  let currentX = 0, currentY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.left = `${mouseX}px`;
+    dot.style.top = `${mouseY}px`;
+  });
+
+  function animateAura() {
+    currentX += (mouseX - currentX) * 0.12;
+    currentY += (mouseY - currentY) * 0.12;
+    aura.style.transform = `translate(${currentX - 24}px, ${currentY - 24}px)`;
+    requestAnimationFrame(animateAura);
+  }
+
+  animateAura();
+</script>
