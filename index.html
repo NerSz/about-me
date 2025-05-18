@@ -115,3 +115,174 @@
       z-index: -1;
     }
   </style>
+  <!-- СЕКЦИЯ: О СЕБЕ -->
+  <section id="about" class="section-about">
+    <div class="about-card">
+      <h2>О себе</h2>
+      <p>
+        Я — Данил Тихонов-Гартунг. Разработчик 1С, инженер, технарь, который мыслит процессами. 
+        <br><br>
+        Имею опыт в производственной автоматизации, техрасчётах, интеграции систем и учётных структур. 
+        Работаю с 1С 8.3 и 7.7, понимаю логику ERP и документооборота, умею настраивать, программировать и внедрять.
+        <br><br>
+        Моя цель — создавать решения, которые реально работают и улучшают процессы. Мой подход — это системное мышление, инженерная строгость и цифровая гибкость.
+      </p>
+    </div>
+  </section>
+
+  <style>
+    .about-card {
+      background: var(--card-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: 18px;
+      padding: 40px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 50px rgba(0,255,195,0.03);
+      position: relative;
+    }
+
+    .about-card h2 {
+      color: var(--accent);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .about-card p {
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.7;
+      letter-spacing: 0.4px;
+    }
+  </style>
+    <!-- СЕКЦИЯ: НАВЫКИ -->
+  <section id="skills" class="section-skills">
+    <div class="skills-card">
+      <h2>Навыки</h2>
+      <div class="skills-grid">
+        <span class="skill-tag">1С:Предприятие 8</span>
+        <span class="skill-tag">1С v7.7</span>
+        <span class="skill-tag">ERP-системы</span>
+        <span class="skill-tag">SQL (базы данных)</span>
+        <span class="skill-tag">AutoCAD</span>
+        <span class="skill-tag">Компас-3D</span>
+        <span class="skill-tag">PTC Mathcad</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Python (скрипты)</span>
+        <span class="skill-tag">Документооборот</span>
+        <span class="skill-tag">Проектирование</span>
+        <span class="skill-tag">ООП + логика</span>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .skills-card {
+      background: var(--card-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: 18px;
+      padding: 40px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 50px rgba(0,255,195,0.03);
+    }
+
+    .skills-card h2 {
+      color: var(--accent);
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill-tag {
+      padding: 10px 16px;
+      background: rgba(0, 255, 195, 0.07);
+      border: 1px solid rgba(0, 255, 195, 0.15);
+      border-radius: 10px;
+      color: #cfcfcf;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .skill-tag:hover {
+      background: rgba(0, 255, 195, 0.2);
+      color: var(--accent);
+      box-shadow: 0 0 10px var(--glow);
+      transform: scale(1.05);
+    }
+  </style>
+    <!-- СЕКЦИЯ: ОПЫТ -->
+  <section id="experience" class="section-experience">
+    <div class="experience-grid">
+      
+      <div class="exp-card">
+        <h3>КЗДМ — Инженер-технолог</h3>
+        <p class="exp-time">Январь 2024 — н.в.</p>
+        <p>
+          Работа с 1С v7.7: структурирование данных, настройка справочников и документов, оптимизация расчётов, техпроцессы.
+        </p>
+      </div>
+
+      <div class="exp-card">
+        <h3>КЗЭМИ — Наладчик КИПиА</h3>
+        <p class="exp-time">Февраль 2023 — Январь 2024</p>
+        <p>
+          Разработка автоматизированных систем управления (ПЛК, AutoCAD), программирование блоков сигналов и внедрение АСУ.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .exp-card {
+      background: var(--card-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      padding: 30px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 30px rgba(0,255,195,0.02);
+      transition: 0.3s ease;
+    }
+
+    .exp-card:hover {
+      box-shadow: 0 0 20px rgba(0,255,195,0.06);
+      transform: translateY(-4px);
+    }
+
+    .exp-card h3 {
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .exp-time {
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 14px;
+    }
+
+    .exp-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
