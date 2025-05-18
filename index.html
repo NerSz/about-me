@@ -83,13 +83,29 @@
       backdrop-filter: blur(14px);
       box-shadow: 0 0 40px rgba(0,255,195,0.02);
     }
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+}
+
+.hero-name.glow-hover {
+  position: relative;
+  cursor: default;
+  transition: text-shadow 0.4s ease, letter-spacing 0.3s ease;
+}
+
+.hero-name.glow-hover:hover {
+  text-shadow: 0 0 12px rgba(0, 255, 195, 0.4),
+               0 0 22px rgba(0, 255, 195, 0.2);
+  letter-spacing: 2.4px;
+}
+
+</style>
   </style>
 </head>
 
 <body>
   <div class="glass-init">
-    <h1 class="hero-name">Данил Тихонов-Гартунг</h1>
-    <div class="name-glow"></div>
+    <h1 class="hero-name glow-hover">Данил Тихонов-Гартунг</h1>
+<div class="name-glow"></div>
     <p style="color:#aaa;font-size:1.1rem;letter-spacing:0.4px;margin-top:10px;">
       1С • Системный взгляд • Производственные технологии • Digital Core
     </p>
@@ -496,4 +512,97 @@
 
   window.addEventListener('scroll', revealOnScroll);
   window.addEventListener('load', revealOnScroll);
+</script>
+<!-- Декоративный фон-точки -->
+<div class="dot-fade-bg"></div>
+
+<style>
+  .dot-fade-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 48px 48px;
+    animation: pulseDots 10s infinite alternate;
+  }
+
+  @keyframes pulseDots {
+    0%   { opacity: 0.015; }
+    100% { opacity: 0.04; }
+  }
+</style>
+<!-- Language Switch -->
+<div class="language-switch">
+  <select id="langSelect" aria-label="Язык">
+    <option value="ru" selected>RU</option>
+    <option value="en">EN</option>
+  </select>
+</div>
+
+<style>
+  .language-switch {
+    position: fixed;
+    top: 24px;
+    right: 32px;
+    z-index: 10000;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 6px;
+    padding: 6px 12px;
+    backdrop-filter: blur(6px);
+  }
+
+  .language-switch select {
+    background: transparent;
+    border: none;
+    color: #ccc;
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+  }
+
+  .language-switch select:hover {
+    color: #00ffc3;
+  }
+</style>
+<!-- SECTION: FEATURE - CURSOR SWITCHER -->
+<style>
+  .cursor-toggle {
+    position: fixed;
+    bottom: 80px;
+    right: 24px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    color: #ccc;
+    cursor: pointer;
+    z-index: 10000;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+  .cursor-toggle:hover {
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+  }
+</style>
+
+<div class="cursor-toggle" onclick="toggleCursor()">Включить курсор</div>
+
+<script>
+  let cursorVisible = true;
+  function toggleCursor() {
+    document.body.style.cursor = cursorVisible ? 'none' : 'auto';
+    document.querySelector('.cursor-toggle').textContent = cursorVisible
+      ? 'Курсор скрыт'
+      : 'Включить курсор';
+    cursorVisible = !cursorVisible;
+  }
 </script>
