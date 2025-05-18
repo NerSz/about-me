@@ -475,3 +475,101 @@
     text-shadow: 0 0 12px rgba(0,255,195,0.3);
   }
 </style>
+<!-- СЕКЦИЯ: ФУТЕР -->
+<footer class="footer-core">
+  <div class="footer-wrap">
+    <p class="footer-main">Данил Тихонов-Гартунг — Digital Engineering & Interface Architect</p>
+    <p class="footer-core-line">NerSz Engine • Resume Interface v2.0</p>
+  </div>
+</footer>
+
+<style>
+  .footer-core {
+    margin-top: 100px;
+    padding: 40px 0 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.01);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 -20px 60px rgba(0,255,195,0.02);
+  }
+
+  .footer-main {
+    color: #888;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-core-line {
+    color: #444;
+    font-size: 0.72rem;
+    opacity: 0.4;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+  }
+</style>
+<!-- СКРОЛЛ-ИНДИКАТОР -->
+<div id="scroll-progress-bar"></div>
+
+<style>
+  #scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--accent), transparent);
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.2s ease-out;
+    box-shadow: 0 0 8px rgba(0, 255, 195, 0.25);
+  }
+</style>
+
+<script>
+  window.addEventListener("scroll", () => {
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.scrollY / docHeight) * 100;
+    document.getElementById("scroll-progress-bar").style.width = scrolled + "%";
+  });
+</script>
+<!-- АУРА-КУРСОРА 120fps -->
+<div class="cursor-aura" id="cursorAura"></div>
+
+<style>
+  .cursor-aura {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(0,255,195,0.08), transparent 60%);
+    z-index: 9999;
+    mix-blend-mode: lighten;
+    filter: blur(4px);
+    will-change: transform;
+    transform: translate(-50%, -50%);
+  }
+</style>
+
+<script>
+  const aura = document.getElementById('cursorAura');
+
+  let mouseX = 0, mouseY = 0;
+  let currentX = 0, currentY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animateAura() {
+    currentX += (mouseX - currentX) * 0.12;
+    currentY += (mouseY - currentY) * 0.12;
+    aura.style.transform = `translate(${currentX - 24}px, ${currentY - 24}px)`;
+    requestAnimationFrame(animateAura);
+  }
+
+  animateAura();
+</script>
