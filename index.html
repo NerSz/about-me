@@ -58,4 +58,60 @@
   </style>
 </head>
 <body>
-  
+    <!-- Главный блок: Имя и титул -->
+  <div class="intro-block">
+    <div class="name-aura"></div>
+    <h1 class="hero-name glow-hover">Данил Тихонов-Гартунг</h1>
+    <p class="hero-sub">1C • Системный подход • Производственные технологии • Digital Core</p>
+  </div>
+
+  <style>
+    .intro-block {
+      position: relative;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .hero-name {
+      font-size: 3.2rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #888, #eee, #00ffc3);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 2px;
+      margin-bottom: 0.3em;
+    }
+
+    .hero-sub {
+      color: #aaa;
+      font-size: 1.1rem;
+      letter-spacing: 0.4px;
+      margin-top: 10px;
+    }
+
+    .glow-hover {
+      transition: text-shadow 0.4s ease, letter-spacing 0.3s ease;
+      cursor: default;
+    }
+
+    .glow-hover:hover {
+      text-shadow:
+        0 0 12px rgba(0, 255, 195, 0.4),
+        0 0 22px rgba(0, 255, 195, 0.2);
+      letter-spacing: 2.5px;
+    }
+
+    .name-aura {
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 180px;
+      background: radial-gradient(circle at center, rgba(0,255,195,0.07), transparent 70%);
+      filter: blur(18px);
+      z-index: -1;
+    }
+  </style>
